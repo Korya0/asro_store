@@ -40,6 +40,13 @@ dev_dependencies:
   # Strict lint rules for high code quality
   very_good_analysis: ^10.2.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/play_store_512.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/icons/play_store_512.png"
+
 flutter:
   uses-material-design: true
 
@@ -47,6 +54,7 @@ flutter:
   assets:
     - assets/env-dev
     - assets/env-prod
+    - assets/images/core/
   # fonts:
   #   - family: MyFont
   #     fonts:
