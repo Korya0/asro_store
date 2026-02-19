@@ -1,10 +1,18 @@
+import 'package:asroo_store/core/app/env_varible.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  runApp(DevicePreview(builder: (context) => const AsroStoreApp()));
+  await EnvVariable.instance.init(envType: EnvType.dev);
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]).then(
+    (value) =>
+        runApp(DevicePreview(builder: (context) => const AsroStoreApp())),
+  );
 }
 
 class AsroStoreApp extends StatelessWidget {
@@ -13,9 +21,11 @@ class AsroStoreApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+      home: const Scaffold(
+        backgroundColor: Colors.black,
+      ),
     );
   }
 }
