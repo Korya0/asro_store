@@ -30,6 +30,7 @@ dependencies:
   # Assets & Resources Management
   # To automate generating app launcher icons
   flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.7
 
 dev_dependencies:
   # For unit and widget testing
@@ -55,7 +56,22 @@ flutter:
     - assets/env-dev
     - assets/env-prod
     - assets/images/core/
-  # fonts:
-  #   - family: MyFont
-  #     fonts:
-  #       - asset: fonts/MyFont-Regular.ttf
+  fonts:
+    # Arabic Fonts
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/arabic/cairo/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/arabic/cairo/Cairo-Bold.ttf
+          weight: 700
+    # English Fonts
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/english/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/english/poppins/Poppins-Bold.ttf
+          weight: 700
