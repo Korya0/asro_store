@@ -63,6 +63,9 @@ flutter:
     - assets/env-dev
     - assets/env-prod
     - assets/images/core/
+    - assets/images/customer/
+    - assets/images/admin/
+    - assets/svg/
   fonts:
     # Arabic Fonts
     - family: Cairo

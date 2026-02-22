@@ -1,4 +1,5 @@
 import 'package:asroo_store/core/common/widgets/text_app.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/style/font/font_weight_helper.dart';
 import 'package:asroo_store/core/utils/context_extension.dart';
 import 'package:asroo_store/features/auth/presentation/widgets/auth_title_info.dart';
@@ -7,6 +8,7 @@ import 'package:asroo_store/features/auth/presentation/widgets/login/login_butto
 import 'package:asroo_store/features/auth/presentation/widgets/login/login_text_form.dart';
 import 'package:asroo_store/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -32,12 +34,17 @@ class LoginView extends StatelessWidget {
                 const LoginTextForm(),
 
                 const LoginButton(),
-                TextApp(
-                  text: S.of(context).create_account,
-                  theme: context.textStyle.copyWith(
-                    fontSize: 16,
-                    fontWeight: FontWeightHelper.bold,
-                    color: context.color.bluePinkLight,
+                GestureDetector(
+                  onTap: () async {
+                    await context.pushNamed(AppRoutes.registerView);
+                  },
+                  child: TextApp(
+                    text: S.of(context).create_account,
+                    theme: context.textStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: FontWeightHelper.bold,
+                      color: context.color.bluePinkLight,
+                    ),
                   ),
                 ),
               ],
