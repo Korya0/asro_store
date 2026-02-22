@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:asroo_store/core/app/bloc_observer.dart';
 import 'package:asroo_store/core/app/connectivity_controller.dart';
 import 'package:asroo_store/core/app/env_varible.dart';
 import 'package:asroo_store/core/common/views/no_network_view.dart';
@@ -8,12 +9,13 @@ import 'package:asroo_store/generated/l10n.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariable.instance.init(envType: EnvType.dev);
-
+  Bloc.observer = AppBlocObserver();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
