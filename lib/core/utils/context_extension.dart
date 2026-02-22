@@ -8,4 +8,7 @@ extension ContextExtension on BuildContext {
 
   // image
   MyAssets get image => Theme.of(this).extension<MyAssets>()!;
+
+  // style
+  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
 }
