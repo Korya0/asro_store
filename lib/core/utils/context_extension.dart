@@ -7,5 +7,5 @@ extension ContextExtension on BuildContext {
   MyColors get color => Theme.of(this).extension<MyColors>()!;
 
   // image
-  MyImages get image => Theme.of(this).extension<MyImages>()!;
+  MyAssets get image => Theme.of(this).extension<MyAssets>()!;
 }
