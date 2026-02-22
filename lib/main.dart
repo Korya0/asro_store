@@ -38,7 +38,7 @@ class AsroStoreApp extends StatelessWidget {
             title: 'Asroo Store',
             debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
             theme: themeDark(),
-            locale: const Locale('ar'),
+            locale: const Locale('en'),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,
@@ -65,7 +65,7 @@ class AsroStoreApp extends StatelessWidget {
           return MaterialApp(
             title: 'No Network',
             debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-            locale: const Locale('ar'),
+            locale: const Locale('en'),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

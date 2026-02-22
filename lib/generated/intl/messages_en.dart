@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "The image has been uploaded successfully.",
     ),
     "lang_code": MessageLookupByLibrary.simpleMessage("English"),
+    "language": MessageLookupByLibrary.simpleMessage("English"),
     "language_tilte": MessageLookupByLibrary.simpleMessage("Language"),
     "log_out": MessageLookupByLibrary.simpleMessage("Logout"),
     "log_out_from_app": MessageLookupByLibrary.simpleMessage(

@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تحميل الصورة بنجاح",
     ),
     "lang_code": MessageLookupByLibrary.simpleMessage("العربية"),
+    "language": MessageLookupByLibrary.simpleMessage("العربية"),
     "language_tilte": MessageLookupByLibrary.simpleMessage("اللغة"),
     "log_out": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
     "log_out_from_app": MessageLookupByLibrary.simpleMessage(

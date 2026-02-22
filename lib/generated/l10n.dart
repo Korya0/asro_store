@@ -54,6 +54,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `English`
+  String get language {
+    return Intl.message('English', name: 'language', desc: '', args: []);
+  }
+
   /// `Asroo Store`
   String get app_name {
     return Intl.message('Asroo Store', name: 'app_name', desc: '', args: []);
