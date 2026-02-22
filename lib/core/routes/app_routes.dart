@@ -1,4 +1,8 @@
 class AppRoutes {
-  static const String testOneScreen = '/testOneScreen';
-  static const String testTwoScreen = '/testTwoScreen';
+  // auth routes
+  static const String loginView = '/loginView';
+  static const String registerView = '/registerView';
+
+  // home routes
+  static const String homeView = '/homeView';
 }

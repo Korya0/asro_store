@@ -1,21 +1,19 @@
-// app router using gor router packge
-
 import 'package:asroo_store/core/routes/app_routes.dart';
-import 'package:asroo_store/test_one_screen.dart';
-import 'package:asroo_store/test_two_screen.dart';
+import 'package:asroo_store/features/auth/presentation/views/login_view.dart';
+import 'package:asroo_store/features/auth/presentation/views/sign_up_view.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
   static final router = GoRouter(
-    initialLocation: AppRoutes.testOneScreen,
+    initialLocation: AppRoutes.loginView,
     routes: [
       GoRoute(
-        path: AppRoutes.testOneScreen,
-        builder: (context, state) => const TestOneScreen(),
+        path: AppRoutes.loginView,
+        builder: (context, state) => const LoginView(),
       ),
       GoRoute(
-        path: AppRoutes.testTwoScreen,
-        builder: (context, state) => const TestTwoScreen(),
+        path: AppRoutes.registerView,
+        builder: (context, state) => const SignUpView(),
       ),
     ],
   );
