@@ -13,6 +13,11 @@ dependencies:
   # UI icons for iOS style
   cupertino_icons: ^1.0.8
 
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
   # Firebase Features
   # The core package for all Firebase services
   firebase_core: ^4.4.0
@@ -41,6 +46,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   # Strict lint rules for high code quality
   very_good_analysis: ^10.2.0
+  intl_utils: ^2.8.7
 
 flutter_icons:
   android: true
@@ -76,3 +82,5 @@ flutter:
           weight: 500
         - asset: assets/fonts/english/poppins/Poppins-Bold.ttf
           weight: 700
+flutter_intl:
+  enabled: true

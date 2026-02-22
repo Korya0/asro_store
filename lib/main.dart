@@ -4,9 +4,11 @@ import 'package:asroo_store/core/app/env_varible.dart';
 import 'package:asroo_store/core/common/views/no_network_view.dart';
 import 'package:asroo_store/core/routes/app_router.dart';
 import 'package:asroo_store/core/style/theme/app_theme.dart';
+import 'package:asroo_store/generated/l10n.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,13 +38,24 @@ class AsroStoreApp extends StatelessWidget {
             title: 'Asroo Store',
             debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
             theme: themeDark(),
+            locale: const Locale('ar'),
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
             builder: (context, child) {
-              return Scaffold(
-                body: Builder(
-                  builder: (context) {
-                    unawaited(ConnectivityController.instance.init());
-                    return child!;
-                  },
+              return GestureDetector(
+                onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                child: Scaffold(
+                  body: Builder(
+                    builder: (context) {
+                      unawaited(ConnectivityController.instance.init());
+                      return child!;
+                    },
+                  ),
                 ),
               );
             },
@@ -52,6 +65,14 @@ class AsroStoreApp extends StatelessWidget {
           return MaterialApp(
             title: 'No Network',
             debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+            locale: const Locale('ar'),
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
             home: const NoNetworkView(),
           );
         }
